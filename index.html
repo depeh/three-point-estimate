@@ -13,13 +13,25 @@
             margin: 20px;
         }
 
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         h1 {
             color: #3498db;
+            margin-bottom: 20px;
         }
 
         label {
             font-size: 18px;
             margin-right: 10px;
+            display: block;
+            margin-bottom: 5px;
         }
 
         input {
@@ -55,20 +67,24 @@
 </head>
 <body>
 
-    <h1>THREE POINT ESTIMATE</h1>
+    <div class="container">
 
-    <label for="optimistic">Optimistic (Perfect Scenario):</label>
-    <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
+        <h1>THREE POINT ESTIMATE</h1>
 
-    <label for="likely">Likely (Probable Time):</label>
-    <input type="text" id="likely" placeholder="Likely" maxlength="10">
+        <label for="optimistic">Optimistic (Perfect Scenario):</label>
+        <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
 
-    <label for="pessimistic">Pessimistic (Unforeseen Problems):</label>
-    <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
+        <label for="likely">Likely (Probable Time):</label>
+        <input type="text" id="likely" placeholder="Likely" maxlength="10">
 
-    <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
+        <label for="pessimistic">Pessimistic (Unforeseen Problems):</label>
+        <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
 
-    <p>THREE POINT ESTIMATE: <span id="estimateValue"></span></p>
+        <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
+
+        <p>THREE POINT ESTIMATE: <span id="estimateValue"></span></p>
+
+    </div>
 
     <script>
         function calculateEstimate() {
