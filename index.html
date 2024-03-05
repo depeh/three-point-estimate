@@ -4,54 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THREE POINT ESTIMATE</title>
-
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff; /* AliceBlue */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             color: #333;
+            text-align: center;
             margin: 20px;
         }
 
         h1 {
-            color: #000080; /* Navy */
+            color: #007bff;
         }
 
         label {
             display: block;
             margin: 10px 0;
-            font-size: 18px;
-            color: #000080; /* Navy */
+            font-size: 14px;
         }
 
         input {
             width: 100%;
             padding: 10px;
-            font-size: 18px;
+            margin: 5px 0;
+            box-sizing: border-box;
         }
 
         button {
-            background-color: #000080; /* Navy */
-            color: #fff;
-            padding: 15px;
-            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
             border: none;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #4169e1; /* RoyalBlue */
-        }
-
-        #result {
-            font-size: 20px;
+        p {
+            font-size: 18px;
             margin-top: 20px;
-            color: #000080; /* Navy */
-        }
-
-        #estimateValue {
-            font-weight: bold;
-            color: #4169e1; /* RoyalBlue */
         }
     </style>
 </head>
@@ -60,29 +50,26 @@
     <h1>THREE POINT ESTIMATE</h1>
 
     <label for="optimistic">Optimistic:</label>
-    <input type="text" id="optimistic" placeholder="Enter optimistic estimate">
+    <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
 
     <label for="likely">Likely:</label>
-    <input type="text" id="likely" placeholder="Enter likely estimate">
+    <input type="text" id="likely" placeholder="Likely" maxlength="10">
 
     <label for="pessimistic">Pessimistic:</label>
-    <input type="text" id="pessimistic" placeholder="Enter pessimistic estimate">
+    <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
 
     <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
 
-    <p id="result">THREE POINT ESTIMATE: <span id="estimateValue">dd</span></p>
+    <p>THREE POINT ESTIMATE: <span id="estimateValue">dd</span></p>
 
     <script>
         function calculateEstimate() {
-            // Hämta värden från input-fälten
             var a = parseFloat(document.getElementById('optimistic').value) || 0;
             var b = parseFloat(document.getElementById('likely').value) || 0;
             var c = parseFloat(document.getElementById('pessimistic').value) || 0;
 
-            // Beräkna three-point estimate
             var result = (a + (b * 4) + c) / 6;
 
-            // Uppdatera resultatet på sidan
             document.getElementById('estimateValue').innerText = result.toFixed(2);
         }
     </script>
