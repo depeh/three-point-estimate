@@ -6,7 +6,7 @@
     <title>THREE POINT ESTIMATE</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             color: #333;
             text-align: center;
@@ -14,34 +14,42 @@
         }
 
         h1 {
-            color: #007bff;
+            color: #3498db;
         }
 
         label {
-            display: block;
-            margin: 10px 0;
-            font-size: 14px;
+            font-size: 18px;
+            margin-right: 10px;
         }
 
         input {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            box-sizing: border-box;
+            font-size: 16px;
+            padding: 8px;
+            margin-bottom: 15px;
+            max-width: 100px; /* Max 10 characters wide */
         }
 
         button {
-            background-color: #007bff;
-            color: white;
+            font-size: 18px;
             padding: 10px;
-            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
             border: none;
             cursor: pointer;
         }
 
+        button:hover {
+            background-color: #2980b9;
+        }
+
         p {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 20px;
+        }
+
+        #estimateValue {
+            font-weight: bold;
+            color: #3498db;
         }
     </style>
 </head>
@@ -49,18 +57,18 @@
 
     <h1>THREE POINT ESTIMATE</h1>
 
-    <label for="optimistic">Optimistic:</label>
+    <label for="optimistic">Optimistic (Perfect Scenario):</label>
     <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
 
-    <label for="likely">Likely:</label>
+    <label for="likely">Likely (Probable Time):</label>
     <input type="text" id="likely" placeholder="Likely" maxlength="10">
 
-    <label for="pessimistic">Pessimistic:</label>
+    <label for="pessimistic">Pessimistic (Unforeseen Problems):</label>
     <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
 
     <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
 
-    <p>THREE POINT ESTIMATE: <span id="estimateValue">dd</span></p>
+    <p>THREE POINT ESTIMATE: <span id="estimateValue"></span></p>
 
     <script>
         function calculateEstimate() {
