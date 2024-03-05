@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THREE POINT ESTIMATE</title>
+    <title>THREE POINT ESTIMATE CALCULATOR</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -48,6 +48,7 @@
             color: #fff;
             border: none;
             cursor: pointer;
+            margin-bottom: 15px;
         }
 
         button:hover {
@@ -69,7 +70,7 @@
 
     <div class="container">
 
-        <h1>THREE POINT ESTIMATE</h1>
+        <h1>THREE POINT ESTIMATE CALCULATOR</h1>
 
         <label for="optimistic">Optimistic (Perfect Scenario):</label>
         <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
@@ -81,6 +82,8 @@
         <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
 
         <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
+
+        <br> <!-- Radbrytning här -->
 
         <p>THREE POINT ESTIMATE: <span id="estimateValue"></span></p>
 
