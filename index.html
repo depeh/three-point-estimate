@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE POINT ESTIMATE</title>
+</head>
+<body>
+
+    <h1>THREE POINT ESTIMATE</h1>
+
+    <label for="optimistic">Optimistic:</label>
+    <input type="text" id="optimistic" placeholder="Enter optimistic estimate">
+
+    <label for="likely">Likely:</label>
+    <input type="text" id="likely" placeholder="Enter likely estimate">
+
+    <label for="pessimistic">Pessimistic:</label>
+    <input type="text" id="pessimistic" placeholder="Enter pessimistic estimate">
+
+    <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
+
+    <p id="result">THREE POINT ESTIMATE: <span id="estimateValue">dd</span></p>
+
+    <script>
+        function calculateEstimate() {
+            // Hämta värden från input-fälten
+            var a = parseFloat(document.getElementById('optimistic').value) || 0;
+            var b = parseFloat(document.getElementById('likely').value) || 0;
+            var c = parseFloat(document.getElementById('pessimistic').value) || 0;
+
+            // Beräkna three-point estimate
+            var result = (a + (b * 4) + c) / 6;
+
+            // Uppdatera resultatet på sidan
+            document.getElementById('estimateValue').innerText = result.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
