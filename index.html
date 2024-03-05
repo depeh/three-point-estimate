@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE POINT ESTIMATE CALCULATOR</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 8px;
+            margin-bottom: 15px;
+            max-width: 100px; /* Max 10 characters wide */
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #estimateValue {
+            font-weight: bold;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>THREE POINT ESTIMATE CALCULATOR</h1>
+
+        <label for="optimistic">Optimistic (Perfect Scenario):</label>
+        <input type="text" id="optimistic" placeholder="Optimistic" maxlength="10">
+
+        <label for="likely">Likely (Probable Time):</label>
+        <input type="text" id="likely" placeholder="Likely" maxlength="10">
+
+        <label for="pessimistic">Pessimistic (Unforeseen Problems):</label>
+        <input type="text" id="pessimistic" placeholder="Pessimistic" maxlength="10">
+
+        <br> <!-- Radbrytning här -->
+
+        <button onclick="calculateEstimate()">CALCULATE ESTIMATE!</button>
+
+        <p>THREE POINT ESTIMATE: <span id="estimateValue"></span></p>
+
+    </div>
+
+    <script>
+        function calculateEstimate() {
+            var a = parseFloat(document.getElementById('optimistic').value) || 0;
+            var b = parseFloat(document.getElementById('likely').value) || 0;
+            var c = parseFloat(document.getElementById('pessimistic').value) || 0;
+
+            var result = (a + (b * 4) + c) / 6;
+
+            document.getElementById('estimateValue').innerText = result.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
